@@ -78,7 +78,7 @@
                                             "positif": "25",
                                             "meninggal": "1",
                                             "sembuh": "10",
-                                            "logo_thumb": "http://localhost/KawalCoronaPapua/assets/backend/images/kabkota/Jayapura.png"
+                                            "logo_thumb": "https://api.infocoronapapua/assets/backend/images/kabkota/Jayapura.png"
                                         },
                                         {
                                             "id_kabupaten": "2",
@@ -87,7 +87,7 @@
                                             "perawatan": "29",
                                             "meninggal": "3",
                                             "sembuh": "22",
-                                            "logo_thumb": "http://localhost/KawalCoronaPapua/assets/backend/images/kabkota/KotaJayapura.png"
+                                            "logo_thumb": "https://api.infocoronapapua/assets/backend/images/kabkota/KotaJayapura.png"
                                         }
                                     ]
                                 }
@@ -126,7 +126,7 @@
                                             "perawatan": "29",
                                             "meninggal": "3",
                                             "sembuh": "22",
-                                            "logo_thumb": "http://localhost/KawalCoronaPapua/assets/backend/images/kabkota/KotaJayapura.png"
+                                            "logo_thumb": "https://api.infocoronapapua/assets/backend/images/kabkota/KotaJayapura.png"
                                         }
                                     ]
                                 }

@@ -6,10 +6,10 @@
     <title><?php echo $title ?></title>
     <!-- Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Landing page template for creative dashboard">
-    <meta name="keywords" content="Landing page template">
+    <meta name="description" content="Covid 19 Papua & Indonesia Live Data">
+    <meta name="keywords" content="By JDEV">
     <!-- Favicon icon -->
-    <link rel="icon" href="<?php echo base_url()?>assets\frontend\images\jdev2.png" type="image/png" sizes="16x32">
+    <link rel="icon" href="<?php echo base_url()?>assets\frontend\images\jdev2.png" type="image/png" sizes="32x32">
     <!-- Bootstrap -->
     <link href="<?php echo base_url()?>assets\frontend\css\bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <!-- Font -->
@@ -52,13 +52,13 @@
                         </ul>
                         <ul class="navbar-nav my-2 my-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#main">HOME</a>
+                                <a class="nav-link page-scroll" href="#main">DASHBOARD</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link page-scroll" href="<?php echo base_url()?>Home/hotline">HOTLINE</a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="<?php echo base_url()?>Home/api">API For Developer</a>
+                                <a class="nav-link page-scroll" href="<?php echo base_url()?>Home/api">API For Developers</a>
                             </li>
                         </ul>
                     </div>
@@ -72,7 +72,7 @@
             <div class="footer">
                 <div class="container">
                     <div class="col-md-12 text-center">
-                        <img src="<?php echo base_url()?>assets\frontend\images\jdev2.png" width="10%" alt="jayapuradev Logo">
+                        <img src="<?php echo base_url()?>assets\frontend\images\jdev2.png" width="8%" alt="jayapuradev Logo">
                         <ul class="footer-menu">
                             <li><a href="https://github.com/Ekhel/KawalCoronaPapua/" target="_blank">Repositoty</a></li>
                             <li><a href="#">Gitter</a></li>
@@ -102,7 +102,7 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\js\menu.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\js\custom.js"></script>
 
-    <script type="text/javascript" src="<?php echo base_url()?>assets\backend\pages\prism\custom-prism.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\prism\custom-prism.js"></script>
 
     <!-- Leaflet -->
     <script type="text/javascript" src="<?php echo base_url()?>assets\leaflet\leaflet.js"></script>

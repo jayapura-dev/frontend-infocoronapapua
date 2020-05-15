@@ -1,7 +1,7 @@
 <script src="<?php echo base_url()?>assets/frontend/js/highcharts.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/exporting.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/export-data.js"></script>
-<script src="<?php echo base_url()?>assets/backend/js/jquery-1.11.3.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/js/jquery-1.11.3.min.js"></script>
 
 <style>
     body {
@@ -113,7 +113,7 @@ foreach($dataindo as $indo){
     </div>
 </div>
 
-<div class="flex-features" id="features">
+<!--<div class="flex-features" id="features">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
@@ -128,7 +128,7 @@ foreach($dataindo as $indo){
             </div>
         </div>
     </div>
-</div>
+</div>!-->
 
 <div class="flex-features" id="features">
     <div class="container">
@@ -157,7 +157,7 @@ foreach($dataindo as $indo){
                                 foreach($suskab as $pos){?>
                                 <tr>
                                     <td class="text-center">
-                                        <a href="#viewsuspectkabkota" data-id="<?php echo $pos->id_kabupaten ?>" data-toggle="modal" title="Get Data"><img src="<?php echo base_url()?>assets/backend/images/kabkota/<?php echo $pos->logo ?>" width="20px" /></a>
+                                        <a href="#viewsuspectkabkota" data-id="<?php echo $pos->id_kabupaten ?>" data-toggle="modal" title="Get Data"><img src="<?php echo base_url()?>assets/frontend/images/kabkota/<?php echo $pos->logo ?>" width="20px" /></a>
                                     </td>
                                     <td class="text-uppercase"><?php echo $pos->nama_kab ?></td>
                                     <td class="text-center"><?php echo $pos->jumlah_suspect ?></td>
@@ -217,7 +217,7 @@ foreach($dataindo as $indo){
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
                                 <div class=table-responsive>
-                                    <!--<table class="table table-bordered">
+                                    <table class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th class="text-center"><strong>NO</strong></th>
@@ -240,7 +240,7 @@ foreach($dataindo as $indo){
                                             </tr>
                                         <?php } ?>
                                         </tbody>
-                                    </table>!-->
+                                    </table>
                                 </div>
                             </div>
                         </div>

@@ -18,12 +18,6 @@ class M_home extends CI_model{
         return $query->result();
     }
 
-    function suspect_kabkota()
-    {
-        $query = $this->db->query("SELECT * FROM v_jumlah_suspect ORDER BY jumlah_suspect DESC ");
-        return $query->result();
-    }
-
     public function get_suspect_kabkota($id_kabupaten = 0)
     {
         $query = $this->db->query("SELECT 
@@ -46,5 +40,59 @@ class M_home extends CI_model{
         WHERE tb_suspect.id_kabupaten = '$id_kabupaten' ");
         
         return $query->result();
+    }
+
+    function suspect_kabkota()
+    {
+        $query = $this->db->query("SELECT * FROM v_jumlah_suspect ORDER BY jumlah_suspect DESC ");
+
+        return $query->result();
+    }
+
+    function rekap_suspect()
+    {
+        $query = $this->db->query("SELECT 
+        COUNT(Distinct tb_suspect.id_suspect) as Confirm,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'POSITIF' THEN tb_suspect.id_suspect END) as Positif,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'SEMBUH' THEN tb_suspect.id_suspect END) as Sembuh,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'MENINGGAL' THEN tb_suspect.id_suspect END) as Meninggal
+        FROM tb_suspect ");
+    
+        return $query->result();
+    }
+    
+    function prosentase_suspect()
+    {
+        $query = $this->db->query("SELECT 
+        v_rekap_suspect.Positif / v_rekap_suspect.Confirm * 100 as p_positif,
+        v_rekap_suspect.Sembuh / v_rekap_suspect.Confirm * 100 as p_sembuh,
+        v_rekap_suspect.Meninggal / v_rekap_suspect.Confirm * 100 as p_meninggal
+        FROM v_rekap_suspect ");
+
+        return $query->result();
+    }
+
+    public function get_count_suspect($id_kabupaten)
+    {
+        $query = $this->db->query("SELECT 
+        COUNT(Distinct tb_suspect.id_suspect) as confirm,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'POSITIF' THEN tb_suspect.id_suspect END) as positif,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'SEMBUH' THEN tb_suspect.id_suspect END) as sembuh,
+        COUNT(Distinct CASE WHEN tb_suspect.status = 'MENINGGAL' THEN tb_suspect.id_suspect END) as meninggal
+        FROM tb_suspect 
+        WHERE tb_suspect.id_kabupaten = $id_kabupaten ");
+    
+        return $query->row_array();
+    }
+
+    function get_porsentase_suspect($id_kabupaten)
+    {
+        $query = $this->db->query("SELECT
+        positif / jumlah_suspect * 100 as p_positif,
+        sembuh / jumlah_suspect * 100 as p_sembuh,
+        meninggal / jumlah_suspect * 100 as p_meninggal
+        FROM v_jumlah_suspect 
+        WHERE id_kabupaten = '$id_kabupaten' ");
+        return $query->row_array();
     }
 }
