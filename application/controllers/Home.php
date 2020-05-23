@@ -53,4 +53,5 @@ class Home extends CI_Controller {
     $data = $this->db->query("SELECT * FROM v_maps_kabupaten_suspect")->result();
     echo json_encode($data);
   }
+  
 }
