@@ -95,4 +95,19 @@ class M_home extends CI_model{
         WHERE id_kabupaten = '$id_kabupaten' ");
         return $query->row_array();
     }
+
+    function get_tambahan()
+    {
+        $today = date('2020-04-30');
+        $query = $this->db->query("SELECT
+        tb_kabupaten.nama_kab as nama_kab,
+        tb_kabupaten.id_kabupaten as id_kabupaten,
+        COUNT(tb_suspect.id_suspect) as jumlah
+        FROM tb_suspect
+        LEFT JOIN tb_kabupaten ON tb_suspect.id_kabupaten = tb_kabupaten.id_kabupaten
+        WHERE tb_suspect.date_created = '$today'
+        GROUP BY tb_kabupaten.id_kabupaten");
+
+        return $query->result();
+    }
 }

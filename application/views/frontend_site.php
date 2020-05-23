@@ -32,18 +32,14 @@
     <link href="<?php echo base_url()?>assets\frontend\css\card2.css" rel="stylesheet" type="text/css">
 
     <!-- Leaflet css -->
-    <link rel="stylesheet" href="<?php echo base_url()?>assets\leaflet\leaflet.css" />
-
-    
+    <!--<link rel="stylesheet" href="<?php echo base_url()?>assets\leaflet\leaflet.css" />!-->
 </head>
-
 <body>
-
     <div class="wrapper animsition" data-animsition-in-class="fade-in" data-animsition-in-duration="1000" data-animsition-out-class="fade-out" data-animsition-out-duration="1000">
         <div class="container">
              <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand page-scroll" href="<?php echo base_url()?>Home"><img src="<?php echo base_url()?>assets\frontend\images\jdev2.png" width="50px" alt="jayapuradev Logo"></a>
+                    <a class="navbar-brand page-scroll" href="<?php echo base_url()?>"><img src="<?php echo base_url()?>assets\frontend\images\jdev2.png" width="50px" alt="jayapuradev Logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -105,8 +101,12 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets\frontend\prism\custom-prism.js"></script>
 
     <!-- Leaflet -->
-    <script type="text/javascript" src="<?php echo base_url()?>assets\leaflet\leaflet.js"></script>
+
+
+    <!--<script type="text/javascript" src="<?php echo base_url()?>assets\leaflet\leaflet.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets\leaflet-providers\leaflet-providers.js"></script>
-    <script type="text/javascript" src="https://rawgithub.com/ismyrnow/Leaflet.groupedlayercontrol/master/src/leaflet.groupedlayercontrol.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/ismyrnow/Leaflet.groupedlayercontrol/master/src/leaflet.groupedlayercontrol.js"></script>!-->
+
+    
 </body>
 </html>

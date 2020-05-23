@@ -3,16 +3,15 @@
 <script src="<?php echo base_url()?>assets/frontend/js/export-data.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/js/jquery-1.11.3.min.js"></script>
 
-<style>
-    body {
-    padding: 0;
-    margin: 0;
-    }
-    html, body, #map {
-    height: 100%;
-    width: 100%;
-    }
-</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-plugins/3.3.1/layer/vector/KML.min.js"></script>
+<script src="<?php echo base_url('assets/leaflet-providers/leaflet-providers.js')?>"></script>
+<script src="https://rawgithub.com/ismyrnow/Leaflet.groupedlayercontrol/master/src/leaflet.groupedlayercontrol.js"></script>
+
+  <style>
+        #map { height: 400px; }
+  </style>
 
 <?php foreach($suspect as $i){
     $confirm = $i->Confirm;
@@ -39,6 +38,14 @@ foreach($dataindo as $indo){
     $indo_sembuh = $indo->sembuh;
     $indo_meninggal = $indo->meninggal;
 }
+
+foreach($jumlah_harian as $h){
+    $tanggal = $h->date_created;
+    $jumlah[] = (float)$h->jumlah;
+}
+
+$tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
+
 ?>
 
 <div class="hero-section app-hero">
@@ -106,6 +113,7 @@ foreach($dataindo as $indo){
                     </div>
                     <div class="card-block">
                         <div id="info" style="height: 350px; auto"></div>
+                        <div id="harian" style="height: 300px; auto"></div>
                     </div>
                 </div>
             </div>
@@ -118,6 +126,7 @@ foreach($dataindo as $indo){
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
                 <div class="card">
+                
                     <div class="card-header">
                         <h3>MAPS</h3>
                     </div>
@@ -154,13 +163,22 @@ foreach($dataindo as $indo){
                                 <tbody>
                                 <?php
                                 $no = 1; 
-                                foreach($suskab as $pos){?>
+                                foreach($suskab as $pos){
+                                $idkab = $pos->id_kabupaten;
+                                ?>
                                 <tr>
                                     <td class="text-center">
                                         <a href="#viewsuspectkabkota" data-id="<?php echo $pos->id_kabupaten ?>" data-toggle="modal" title="Get Data"><img src="<?php echo base_url()?>assets/frontend/images/kabkota/<?php echo $pos->logo ?>" width="20px" /></a>
                                     </td>
                                     <td class="text-uppercase"><?php echo $pos->nama_kab ?></td>
-                                    <td class="text-center"><?php echo $pos->jumlah_suspect ?></td>
+                                    <td class="text-center">
+                                    <?php echo $pos->jumlah_suspect ?>                
+                                        <?php foreach($tambah_harian as $h){
+                                            if($idkab==$h->id_kabupaten){ ?>
+                                                 <text class="small" style="color:red;"> +<?php echo $h->jumlah ?></text>
+                                        <?php } ?>
+                                    <?php } ?>
+                                    </td>
                                     <td class="text-center"><?php echo $pos->positif ?></td>
                                     <td class="text-center"><?php echo $pos->sembuh ?></td>
                                     <td class="text-center"><?php echo $pos->meninggal ?></td>
@@ -321,8 +339,40 @@ foreach($dataindo as $indo){
 
     }]
 });
-
 </script>
+
+<!--<script type="text/javascript">
+    Highcharts.chart('harian', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Monthly Average Temperature'
+    },
+    xAxis: {
+        type: 'datetime',
+        categories: <?php echo json_encode($tanggal); ?>
+    },
+    yAxis: {
+        title: {
+            text: 'Orang'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: 'Penambahan',
+        data: <?php echo json_encode($jumlah); ?>
+
+    }]
+});
+</script>!-->
 
 <script>
   $(document).ready(function(){
@@ -337,18 +387,47 @@ foreach($dataindo as $indo){
             }
         });
     });
-  });
-</script>
 
-<script>
-    var L = window.L;
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map', {
+        center: [39.73, -104.99],
+        zoom: 10,
+        layers: [papua]
+    });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=G2IbtGpTNFctQvmZhidF', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+
     }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    var base_url = <?php echo base_url()?>
+
+    var papua = new L.LayerGroup();
+
+    $.getJSON(base_url+"home/papua",function(data){
+        $.each(data, function(i, field){
+            var lat = parseFloat(data[i].latitude);
+            var lon = parseFloat(data[i].longitude);
+
+            var iconLogo = L.icon({
+                iconUrl: base_url+'assets/images/kabkota/'+logo
+                iconSize: [30, 30]
+            });
+
+            L.marker([lon,lat]).addTo(papua)
+                .bindPopup(data[i].nama_kab)
+                .openPopup('');
+        });
+    });
+
+    var baseLayers = {
+        'Satelite': L.tileLayer.provider('Esri.WorldImagery'),
+        'OpenStreetMap': L.tileLayer.provider('OpenStreetMap.HOT').addTo(map)
+    };
+
+    var overlayMaps = {
+        "Papua": papua
+    };
+
+    L.control.groupedLayers(overlayMaps).addTo(map);
+  });
 </script>
