@@ -5,13 +5,37 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-plugins/3.3.1/layer/vector/KML.min.js"></script>
 <script src="<?php echo base_url('assets/leaflet-providers/leaflet-providers.js')?>"></script>
 <script src="https://rawgithub.com/ismyrnow/Leaflet.groupedlayercontrol/master/src/leaflet.groupedlayercontrol.js"></script>
 
-  <style>
-        #map { height: 400px; }
-  </style>
+    <style>
+        #map { 
+            height: 500px; 
+        }
+        .info { 
+            padding: 6px 8px; 
+            font: 14px/16px Arial, Helvetica, sans-serif; 
+            background: white; 
+            background: rgba(255,255,255,0.8); 
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+            border-radius: 5px; 
+        } 
+        .info h4 { margin: 0 0 5px; 
+            color: #777; 
+        }
+        .legend { 
+            text-align: left; 
+            line-height: 18px; 
+            color: #555; 
+        } 
+        .legend i { 
+            width: 18px; 
+            height: 18px; 
+            float: left; 
+            margin-right: 8px; 
+            opacity: 0.7; 
+        }
+    </style>
 
 <?php foreach($suspect as $i){
     $confirm = $i->Confirm;
@@ -113,7 +137,7 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
                     </div>
                     <div class="card-block">
                         <div id="info" style="height: 350px; auto"></div>
-                        <div id="harian" style="height: 300px; auto"></div>
+                        <!--<div id="harian" style="height: 300px; auto"></div>!-->
                     </div>
                 </div>
             </div>
@@ -121,14 +145,13 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
     </div>
 </div>
 
-<!--<div class="flex-features" id="features">
+<div class="flex-features" id="features">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 mt-12">
                 <div class="card">
-                
                     <div class="card-header">
-                        <h3>MAPS</h3>
+                        <h3>PETA ITENSITAS PENULARAN</h3>
                     </div>
                     <div class="card-block">
                         <div id="map"></div>
@@ -137,7 +160,7 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
             </div>
         </div>
     </div>
-</div>!-->
+</div>
 
 <div class="flex-features" id="features">
     <div class="container">
@@ -285,6 +308,8 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
     </div>
 </div>
 
+<scripts src="<?php echo base_url()?>assets/sourcemap/showmap.js"></scripts>
+
 <script type="text/javascript">
 
     Highcharts.chart('info', {
@@ -388,46 +413,114 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
         });
     });
 
-    var map = L.map('map', {
-        center: [39.73, -104.99],
-        zoom: 10,
-        layers: [papua]
-    });
+    var map = L.map('map').setView([-2.556884820881381,140.46266563281256], 6);
 
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=G2IbtGpTNFctQvmZhidF', {
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
 
     }).addTo(map);
 
-    var base_url = <?php echo base_url()?>
-
-    var papua = new L.LayerGroup();
-
-    $.getJSON(base_url+"home/papua",function(data){
-        $.each(data, function(i, field){
-            var lat = parseFloat(data[i].latitude);
-            var lon = parseFloat(data[i].longitude);
-
-            var iconLogo = L.icon({
-                iconUrl: base_url+'assets/images/kabkota/'+logo
-                iconSize: [30, 30]
-            });
-
-            L.marker([lon,lat]).addTo(papua)
-                .bindPopup(data[i].nama_kab)
-                .openPopup('');
-        });
+    $.getJSON("<?php echo base_url('assets/sourcemap/papua2.json')?>",function(data){
+        L.geoJson(data,{
+            style: style,
+		    onEachFeature: onEachFeature
+        }).addTo(map);
     });
 
-    var baseLayers = {
-        'Satelite': L.tileLayer.provider('Esri.WorldImagery'),
-        'OpenStreetMap': L.tileLayer.provider('OpenStreetMap.HOT').addTo(map)
-    };
+    var info = L.control();
 
-    var overlayMaps = {
-        "Papua": papua
-    };
+	info.onAdd = function (map) {
+		this._div = L.DomUtil.create('div', 'info');
+		this.update();
+		return this._div;
+	};
 
-    L.control.groupedLayers(overlayMaps).addTo(map);
+	info.update = function (props) {
+		this._div.innerHTML = '<h4>POSITIF COVID 19</h4>' +  (props ?
+			'<b>' + props.AMA_KABB_ + '</b><br />' + props.positif + ' Orang'
+			: 'Hover Pada Peta Kab/Kota');
+	};
+
+	info.addTo(map);
+
+    function getColor(d) {
+		return d > 1000 ? '#800026' :
+				d > 500  ? '#BD0026' :
+				d > 200  ? '#E31A1C' :
+				d > 100  ? '#FC4E2A' :
+				d > 50   ? '#FD8D3C' :
+				d > 20   ? '#FEB24C' :
+				d > 10   ? '#FED976' :
+						   '#FFEDA0';
+	}
+
+    function style(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'white',
+			dashArray: '3',
+			fillOpacity: 0.7,
+			fillColor: getColor(feature.properties.positif)
+		};
+	}
+
+    function highlightFeature(e) {
+		var layer = e.target;
+
+		layer.setStyle({
+			weight: 5,
+			color: '#666',
+			dashArray: '',
+			fillOpacity: 0.7
+		});
+
+		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+			layer.bringToFront();
+		}
+
+		info.update(layer.feature.properties);
+	}
+
+    function resetHighlight(e) {
+		geojson.resetStyle(e.target);
+		info.update();
+	}
+
+	function zoomToFeature(e) {
+		map.fitBounds(e.target.getBounds());
+	}
+
+	function onEachFeature(feature, layer) {
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlight,
+			click: zoomToFeature
+		});
+	}
+
+    var legend = L.control({position: 'bottomright'});
+
+	legend.onAdd = function (map) {
+
+		var div = L.DomUtil.create('div', 'info legend'),
+			grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+			labels = [],
+			from, to;
+
+		for (var i = 0; i < grades.length; i++) {
+			from = grades[i];
+			to = grades[i + 1];
+
+			labels.push(
+				'<i style="background:' + getColor(from + 1) + '"></i> ' +
+				from + (to ? '&ndash;' + to : '+'));
+		}
+
+		div.innerHTML = labels.join('<br>');
+		return div;
+	};
+
+	legend.addTo(map);
   });
 </script>
