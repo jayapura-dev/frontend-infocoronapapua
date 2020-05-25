@@ -9,9 +9,7 @@
 <script src="https://rawgithub.com/ismyrnow/Leaflet.groupedlayercontrol/master/src/leaflet.groupedlayercontrol.js"></script>
 
     <style>
-        #map { 
-            height: 500px; 
-        }
+        
         .info { 
             padding: 6px 8px; 
             font: 14px/16px Arial, Helvetica, sans-serif; 
@@ -154,7 +152,7 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
                         <h3>PETA ITENSITAS PENULARAN</h3>
                     </div>
                     <div class="card-block">
-                        <div id="map"></div>
+                        <div class="col-md-12" style="height:400px;" id="map"></div>
                     </div>
                 </div>
             </div>
@@ -413,7 +411,7 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
         });
     });
 
-    var map = L.map('map').setView([-2.556884820881381,140.46266563281256], 6);
+    var map = L.map('map').setView([-4.5577001,139.0213034], 6);
 
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=G2IbtGpTNFctQvmZhidF', {
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
