@@ -1170,7 +1170,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. DEIYAI<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. DEIYAI",
+                "AMA_KABB_": "DEIYAI",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -1605,7 +1605,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. MAPPI<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. MAPPI",
+                "AMA_KABB_": "MAPPI",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -1984,7 +1984,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. ASMAT<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. ASMAT",
+                "AMA_KABB_": "ASMAT",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -3177,7 +3177,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. BIAK NUMFOR<br>positif: 33<br>perawatan: 26<br>sembuh: 7<br>meninggal: 0",
-                "AMA_KABB_": "KAB. BIAK NUMFOR",
+                "AMA_KABB_": "BIAK NUMFOR",
                 "positif": "33",
                 "perawatan": "26",
                 "sembuh": "7",
@@ -3424,7 +3424,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. JAYAWIJAYA<br>positif: 7<br>perawatan: 2<br>sembuh: 5<br>meninggal: 0",
-                "AMA_KABB_": "KAB. JAYAWIJAYA",
+                "AMA_KABB_": "JAYAWIJAYA",
                 "positif": "7",
                 "perawatan": "2",
                 "sembuh": "5",
@@ -3839,7 +3839,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. KEEROM<br>positif: 16<br>perawatan: 12<br>sembuh: 4<br>meninggal: 0",
-                "AMA_KABB_": "KAB. KEEROM",
+                "AMA_KABB_": "KEEROM",
                 "positif": "16",
                 "perawatan": "12",
                 "sembuh": "4",
@@ -10318,7 +10318,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. MEMBERAMO RAYA<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. MEMBERAMO RAYA",
+                "AMA_KABB_": "MAMBERAMO RAYA",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -18045,7 +18045,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. BOVEN DIGOEL<br>positif: 8<br>perawatan: 7<br>sembuh: 1<br>meninggal: 0",
-                "AMA_KABB_": "KAB. BOVEN DIGOEL",
+                "AMA_KABB_": "BOVEN DIGOEL",
                 "positif": "8",
                 "perawatan": "7",
                 "sembuh": "1",
@@ -19840,7 +19840,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. TOLIKARA<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. TOLIKARA",
+                "AMA_KABB_": "TOLIKARA",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -21891,7 +21891,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. DOGIYAI<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. DOGIYAI",
+                "AMA_KABB_": "DOGIYAI",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -22510,7 +22510,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. INTAN JAYA<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. INTAN JAYA",
+                "AMA_KABB_": "INTAN JAYA",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -23521,10 +23521,10 @@
             "properties": {
                 "Name": "kabupaten Jayapura",
                 "description": "AMA_KABB_: KAB. JAYAPURA<br>positif: 65<br>perawatan: 41<br>sembuh: 23<br>meninggal: 1",
-                "AMA_KABB_": "KAB. JAYAPURA",
+                "AMA_KABB_": "JAYAPURA",
                 "positif": "65",
-                "perawatan": "41",
-                "sembuh": "23",
+                "perawatan": "34",
+                "sembuh": "30",
                 "meninggal": "1"
             },
             "geometry": {
@@ -27800,7 +27800,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. LANI JAYA<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. LANI JAYA",
+                "AMA_KABB_": "LANI JAYA",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -28064,8 +28064,8 @@
                 "Name": "",
                 "description": "AMA_KABB_: KOTA JAYAPURA<br>positif: 265<br>perawatan: 225<br>sembuh: 34<br>meninggal: 6",
                 "AMA_KABB_": "KOTA JAYAPURA",
-                "positif": "265",
-                "perawatan": "225",
+                "positif": "266",
+                "perawatan": "226",
                 "sembuh": "34",
                 "meninggal": "6"
             },
@@ -31670,7 +31670,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. MEMB_TENGAH<br>positif: 2<br>perawatan: 0<br>sembuh: 2<br>meninggal: 0",
-                "AMA_KABB_": "KAB. MEMB_TENGAH",
+                "AMA_KABB_": "MAMBERAMO TENGAH",
                 "positif": "2",
                 "perawatan": "0",
                 "sembuh": "2",
@@ -33393,7 +33393,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. MERAUKE<br>positif: 14<br>perawatan: 3<br>sembuh: 11<br>meninggal: 0",
-                "AMA_KABB_": "KAB. MERAUKE",
+                "AMA_KABB_": "MERAUKE",
                 "positif": "14",
                 "perawatan": "3",
                 "sembuh": "11",
@@ -36788,7 +36788,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. NABIRE<br>positif: 18<br>perawatan: 17<br>sembuh: 1<br>meninggal: 0",
-                "AMA_KABB_": "KAB. NABIRE",
+                "AMA_KABB_": "NABIRE",
                 "positif": "18",
                 "perawatan": "17",
                 "sembuh": "1",
@@ -39075,10 +39075,10 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. MIMIKA<br>positif: 195<br>perawatan: 125<br>sembuh: 66<br>meninggal: 4",
-                "AMA_KABB_": "KAB. MIMIKA",
-                "positif": "195",
-                "perawatan": "125",
-                "sembuh": "66",
+                "AMA_KABB_": "MIMIKA",
+                "positif": "201",
+                "perawatan": "118",
+                "sembuh": "79",
                 "meninggal": "4"
             },
             "geometry": {
@@ -42188,7 +42188,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. NDUGA<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. NDUGA",
+                "AMA_KABB_": "NDUGA",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -42639,7 +42639,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. PANIAI<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. PANIAI",
+                "AMA_KABB_": "PANIAI",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -43374,7 +43374,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. PEG. BINTANG<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. PEG. BINTANG",
+                "AMA_KABB_": "PEGUNUNGAN BINTANG",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -44071,7 +44071,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. PUNCAK<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. PUNCAK",
+                "AMA_KABB_": "PUNCAK",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -44802,7 +44802,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. PUNCAK JAYA<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. PUNCAK JAYA",
+                "AMA_KABB_": "PUNCAK JAYA",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -45809,7 +45809,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. SARMI<br>positif: 4<br>perawatan: 1<br>sembuh: 3<br>meninggal: 0",
-                "AMA_KABB_": "KAB. SARMI",
+                "AMA_KABB_": "SARMI",
                 "positif": "4",
                 "perawatan": "1",
                 "sembuh": "3",
@@ -52524,11 +52524,11 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. SUPIORI<br>positif: 2<br>perawatan: 2<br>sembuh: 0<br>meninggal: 0",
-                "AMA_KABB_": "KAB. SUPIORI",
-                "positif": "2.0",
-                "perawatan": "2.0",
-                "sembuh": "0.0",
-                "meninggal": "0.0"
+                "AMA_KABB_": "SUPIORI",
+                "positif": "2",
+                "perawatan": "1",
+                "sembuh": "1",
+                "meninggal": "0"
             },
             "geometry": {
                 "type": "Polygon",
@@ -52723,11 +52723,11 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. WAROPEN<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. WAROPEN",
-                "positif": "",
-                "perawatan": "",
-                "sembuh": "",
-                "meninggal": ""
+                "AMA_KABB_": "WAROPEN",
+                "positif": "1",
+                "perawatan": "1",
+                "sembuh": "0",
+                "meninggal": "0"
             },
             "geometry": {
                 "type": "Polygon",
@@ -54230,7 +54230,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. YAHUKIMO<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. YAHUKIMO",
+                "AMA_KABB_": "YAHUKIMO",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -55421,7 +55421,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. YALIMO<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. YALIMO",
+                "AMA_KABB_": "YALIMO",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",
@@ -56132,7 +56132,7 @@
             "properties": {
                 "Name": "",
                 "description": "AMA_KABB_: KAB. YAPEN<br>positif: <br>perawatan: <br>sembuh: <br>meninggal: ",
-                "AMA_KABB_": "KAB. YAPEN",
+                "AMA_KABB_": "YAPEN",
                 "positif": "",
                 "perawatan": "",
                 "sembuh": "",

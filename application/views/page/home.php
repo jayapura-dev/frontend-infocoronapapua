@@ -27,7 +27,7 @@
             color: #555; 
         } 
         .legend i { 
-            width: 18px; 
+            width: 20px; 
             height: 18px; 
             float: left; 
             margin-right: 8px; 
@@ -418,13 +418,6 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
 
     }).addTo(map);
 
-    $.getJSON("<?php echo base_url('assets/sourcemap/papua2.json')?>",function(data){
-        L.geoJson(data,{
-            style: style,
-		    onEachFeature: onEachFeature
-        }).addTo(map);
-    });
-
     var info = L.control();
 
 	info.onAdd = function (map) {
@@ -434,22 +427,23 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
 	};
 
 	info.update = function (props) {
-		this._div.innerHTML = '<h4>POSITIF COVID 19</h4>' +  (props ?
-			'<b>' + props.AMA_KABB_ + '</b><br />' + props.positif + ' Orang'
-			: 'Hover Pada Peta Kab/Kota');
+		this._div.innerHTML = '<h4>POSITIF</h4>' +  (props ?
+			'<b>' + props.AMA_KABB_ + '</b><br />' + props.positif + ' ORANG'
+			: 'Hover Pada Peta');
 	};
 
 	info.addTo(map);
 
     function getColor(d) {
-		return d > 1000 ? '#800026' :
+		return  d > 1000 ? '#800026' :
 				d > 500  ? '#BD0026' :
 				d > 200  ? '#E31A1C' :
 				d > 100  ? '#FC4E2A' :
 				d > 50   ? '#FD8D3C' :
 				d > 20   ? '#FEB24C' :
 				d > 10   ? '#FED976' :
-						   '#FFEDA0';
+                d > 0    ? '#FFEEBF' :
+				           '#7FFF00' ;
 	}
 
     function style(feature) {
@@ -467,7 +461,7 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
 		var layer = e.target;
 
 		layer.setStyle({
-			weight: 5,
+			weight: 3,
 			color: '#666',
 			dashArray: '',
 			fillOpacity: 0.7
@@ -497,12 +491,21 @@ $tanggal_harian = $this->indo_tanggal->tgl_indo($tanggal);
 		});
 	}
 
+    var geojson;
+
+    $.getJSON("<?php echo base_url('assets/sourcemap/papua2.json')?>",function(data){
+        geojson = L.geoJson(data,{
+            style: style,
+		    onEachFeature: onEachFeature
+        }).addTo(map);
+    });
+
     var legend = L.control({position: 'bottomright'});
 
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+			grades = [1, 10, 20, 50, 100, 200, 500, 1000],
 			labels = [],
 			from, to;
 
