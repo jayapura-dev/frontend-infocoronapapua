@@ -9,7 +9,7 @@
 ## Tentang Info Corona Papua :
   - Info Corona Papua adalah Web Applikasi sekaligus dapat Menjadi Portal Informasi Live Data Kasus Covid 19 di Papua, Sedikit Sumbangsih dari Kami untuk Papua, Project ini Open Source, Siapa Saja Boleh untuk Berkontribusi.
 
-<p align="center"><img src="https://github.com/Ekhel/KawalCoronaPapua/blob/master/assets/backend/images/repo%20mockup%20dashboard.jpg" width="800px"></p>
+<p align="center"><img src="https://github.com/jayapura-dev/backend-infocoronapapua/blob/master/assets/backend/images/repo%20mockup%20dashboard.jpg" width="800px"></p>
 ------------------------------------------------------------------------------------------------------------------------
 
 ## System Requirements :
