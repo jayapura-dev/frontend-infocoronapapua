@@ -26,9 +26,13 @@
 * Library :
   - Indo Tanggal
   - REST_Controllers
+  - Leaflet (Maps)
+  
+* File :
+  - GeoJson ( Peta Papua dalam Bentuk JSON yang di Covert dari File .shp)
 
 * Backend :
-  - [Kawal Corona Papua](https://github.com/Ekhel/frontend-kawal-corona-papua)
+  - [Backend Info Corona Papua](https://github.com/jayapura-dev/backend-infocoronapapua)
 
 ------------------------------------------------------------------------------
 
@@ -48,7 +52,7 @@
   - [Data Global Sembuh : https://api.kawalcorona.com/sembuh/](https://api.kawalcorona.com/sembuh)
 
 * API Services Kusus Data Papua :
-  - [Data Papua : http://localhost/api](http://localhost/KawalCoronaPapua/api/)
+  - [Data Papua : https://api.infocoronapapua.com](https://api.infocoronapapua.com)
     * Sample Response :
 
       ```javascripts
@@ -66,8 +70,8 @@
       }
       ```
 
-  - [Data Kabupaten : http://localhost/api/kabupaten](http://localhost/KawalCoronaPapua/api/kabupaten)
-  - [Data Kabupaten (Params) : http://localhost/api/kabupaten?id_kabupaten=1](http://localhost/KawalCoronaPapua/api/kabupaten?id_kabupaten=1)
+  - [Data Kabupaten :  https://api.infocoronapapua.com/kabkota]( https://api.infocoronapapua.com/kabkota)
+  - [Data Kabupaten (Params) : https://api.infocoronapapua.com/kabkota?id_kabupaten=2](https://api.infocoronapapua.com/kabkota?id_kabupaten=2)
     * Sample Response :
     * Dengan Parameter id_kabupaten
 
@@ -94,8 +98,10 @@
 
 ## Halaman Yang Tersedia :
   - [x] Dashboard
+  - [x] Grafik Per Kabupaten
+  - [x] Peta Sebaran
   - [x] Hotline
-  - [x] API For developers
+  - [x] API For developers (API Services)
 
 --------------------------------------------------------------------------------------------------------------
 
